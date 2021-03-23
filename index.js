@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import adminRoute from "./backend/api/routes/adminRoute";
 import blogRoute from "./backend/api/routes/blogRoute";
+import messageRoute from "./backend/api/routes/messageRoute";
 import profileRoute from "./backend/api/routes/profileRoute";
 import projectRoute from "./backend/api/routes/projectRoute";
 import key from "./backend/config/key";
@@ -25,6 +26,7 @@ app.use("/api/admin", adminRoute);
 app.use("/api/profile", profileRoute);
 app.use("/api/projects", projectRoute);
 app.use("/api/blogs", blogRoute);
+app.use("/api/message", messageRoute)
 
 const port = key.PORT;
 
