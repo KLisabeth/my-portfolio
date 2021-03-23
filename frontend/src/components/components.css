@@ -1,6 +1,7 @@
 /*Navbar*/
 
 .Navbar {
+  background-color: #282c34;
   width: 100%;
   min-height: 80px;
   padding: 20px 0;
@@ -89,6 +90,7 @@
  /*Footer*/
 
  .footer {
+  background-color: #282c34;
   max-height: 50px;
   position: absolute;
   bottom: 0;
@@ -97,6 +99,7 @@
 }
 
 .copyright {
+  background-color: #282c34;
   position: relative;
   bottom: 0;
   margin: 0 auto;
@@ -108,7 +111,7 @@
 .footer-icons{
   width: 100%;
   text-align: end;
-  padding: 3%;
+  padding: 1%;
 }
  @media screen and (max-width: 990px) {
 
