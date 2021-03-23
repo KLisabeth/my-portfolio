@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import adminRoute from "./backend/api/routes/adminRoute";
 import key from "./backend/config/key";
 
 //Mongo Db
@@ -14,6 +15,10 @@ mongoose
   .catch((error) => console.log(error.reason));
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/api/admin", adminRoute);
 
 const port = key.PORT;
 
