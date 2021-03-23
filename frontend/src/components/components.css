@@ -103,6 +103,12 @@
   width: 100%;
   text-align: center;
   color: #b9b6b6;
+  font-size: 18px;
+}
+.footer-icons{
+  width: 100%;
+  text-align: end;
+  padding: 3%;
 }
  @media screen and (max-width: 990px) {
 
