@@ -1,0 +1,185 @@
+/*Navbar*/
+
+.Navbar {
+  width: 100%;
+  min-height: 80px;
+  padding: 20px 0;
+  z-index: 10;
+  transition: all 0.3s ease;
+ }
+
+ .Navbar.sticky {
+   padding: 10px 0;
+   
+ }
+
+ .Navbar .menu-list {
+  display: inline-flex;
+ }
+
+ .Navbar .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ }
+
+ .Navbar .logo a {
+  color: #e710c7fa;
+  font-family: "Great Vibes";
+  float: left;
+  left: 20px;
+  margin-left: 90px;
+  font-size: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+ }
+
+ .menu-list li {
+   list-style: none;
+ }
+
+ .menu-list li a {
+   padding: 15px;
+   margin-left: 15px;
+   text-decoration: none;
+   color: #e7e2e2;
+   font-family: "Playfair Display", italic;
+   font-size: 25px;
+   font-weight: 500;
+ }
+
+ .menu-list li a:hover {
+   background: -webkit-linear-gradient(top left, #068596, #b307a4, #540794f5);
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+   -webkit-background-clip: text;
+ }
+.navbar-button{
+  font-family: "Playfair Display", italic;
+  font-size: 25px;
+  text-align: left;
+  color: #e7e2e2;
+  background: none;
+  margin: 0 15px 0 15px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+ /*Header icons*/
+
+ .icon {
+   color: #fdf6f6;
+   font-size: 20px;
+   cursor: pointer;
+   display: none;
+ }
+
+ .icon.cancel-btn,
+ .rime {
+   position: absolute;
+   right: 30px;
+   top: 20px;
+ }
+
+ .icon:hover {
+   font-size: 1.5rem;
+   color: cyan;
+ }
+ @media screen and (max-width: 990px) {
+
+  /*Header*/
+  .icon {
+    display: block;
+    font-size: 2em;
+  }
+
+  .icon .hide {
+    display: none;
+  }
+
+  .Navbar .menu-list {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    width: 100%;
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    transition: all 0.3s ease;
+    z-index: 1;
+    overflow: auto;
+  }
+
+  .Navbar .menu-list.active {
+    left: 0%;
+  }
+
+  .Navbar .menu-list li {
+    margin-top: 35px;
+  }
+
+  .Navbar .menu-list li {
+    font-size: 45px;
+  }
+
+  .Navbar .logo a {
+    float: left;
+    margin-left: 70px;
+  }
+
+}
+@media only screen and (max-width: 680px) {
+
+  /*Header*/
+  .Navbar .logo a {
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .header a {
+    overflow: hidden;
+    float: center;
+    margin: auto;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  /*Navbar*/
+  .Navbar .logo a {
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .Navbar .menu-list li {
+    font-size: 35px;
+  }
+  .icon {
+   font-size: 20px; 
+  }
+
+}
+
+@media screen and (max-width: 280px) {
+
+  /*Navbar*/
+  .Navbar .logo a {
+    font-size: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .Navbar .menu-list li {
+    font-size: 25px;
+  }
+  .icon {
+   font-size: 18px; 
+  }
+}
