@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import adminRoute from "./backend/api/routes/adminRoute";
 import profileRoute from "./backend/api/routes/profileRoute";
+import projectRoute from "./backend/api/routes/projectRoute";
 import key from "./backend/config/key";
 
 //Mongo Db
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/admin", adminRoute);
 app.use("/api/profile", profileRoute);
+app.use("/api/projects", projectRoute);
 
 const port = key.PORT;
 
