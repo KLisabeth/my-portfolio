@@ -39,7 +39,7 @@ code {
 /*About page*/
 
 .about {
-  height: 100vh;
+  height: 100%;
   padding: 30px;
   background-color: #282c34;
   overflow: hidden;
@@ -114,6 +114,45 @@ code {
   font-size: 1.4em;
   font-weight: 500;
 }
+/*Languages page*/
+
+.language-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.language-container h3 {
+  text-align: center;
+  font-family: "Playfair Display";
+  margin: 20px auto;
+  font-size: 42px;
+  background: -webkit-linear-gradient(top left, #4bd6e9, #e619d4, #760cccf5);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.languages {
+  float: inline-start;
+  width: 100%;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.languageDescription {
+  text-align: center;
+  display: inline-block;
+  max-height: 150px;
+  max-width: 150px;
+  margin: 40px;
+}
+
+.languageDescription img {
+  max-height: 80px;
+  max-width: 80px;
+}
+
 
 @media screen and (max-width: 990px) {
 
@@ -196,6 +235,28 @@ code {
     font-size: 19px;
     padding: 5px;
   }
+
+  /*Language-page*/
+  .languages {
+    float: inline-start;
+    width: 100%;
+    margin: 8px auto;
+    padding: 3px;
+  }
+  .language-container h3 {
+    font-size: 30px;
+  }
+
+  .languageDescription {
+    max-height: 80px;
+    max-width: 80px;
+    margin: 44px;
+  }
+  
+  .languageDescription img {
+    max-height: 40px;
+    max-width: 40px;
+  }
 }
 @media screen and (max-width: 360px) {
 
@@ -237,6 +298,30 @@ code {
     font-size: 15px;
     }
 
+     /*Languages*/
+     .languages {
+      float: inline-start;
+      width: 100%;
+      margin: 8px auto;
+      padding: 3px;
+    }
+    .language-container h3 {
+      font-size: 25px;
+    }
+    
+    .languageDescription {
+      text-align: center;
+      display: inline-block;
+      max-height: 80px;
+      max-width: 80px;
+      margin: 35px;
+    }
+    
+    .languageDescription img {
+      max-height: 33px;
+      max-width: 33px;
+    }
+
 }
 
 @media screen and (max-width: 280px) {
@@ -273,5 +358,21 @@ code {
   }
   .about_btn {
   font-size: 12px;
+  }
+
+  /*Languages*/
+  .languageDescription {
+    max-height: 60px;
+    max-width: 60px;
+    margin: 15px;
+  }
+ 
+  .languageDescription img {
+    max-height: 25px;
+    max-width: 25px;
+  }
+
+  .language-container h3 {
+    font-size: 20px;
   }
 }
