@@ -61,7 +61,7 @@ code {
 .my_img img:hover {
   transform: scale(1.03);
 }
-
+.contact_btn,
 .about_btn {
   background: transparent;
   border-radius: 50px;
@@ -72,13 +72,13 @@ code {
   padding: 10px;
   text-decoration: none;
 }
-
+.contact_btn:hover,
 .about_btn:hover {
   background: linear-gradient(to top left, #4bd6e9, #eb1ada, #6414cc);
   color: #1a119b;
   text-decoration: none;
 }
-
+.contact_title,
 .about_title {
   font-size: 45px;
   background: -webkit-linear-gradient(#f5dfea, #362dac);
@@ -153,6 +153,46 @@ code {
   max-width: 80px;
 }
 
+/*Contact-page*/
+
+.contact_heart {
+  color: #4bd6e9;
+}
+.contact {
+  height: 100vh;
+  background: #282c34;
+  padding: 15px;
+}
+
+.contact-form textarea,
+.contact-form input {
+  background-color: #bdb9b921;
+}
+
+.contact-script {
+  text-align: center;
+  font-size: 35px;
+  background: -webkit-linear-gradient(top left, #04d7f3, #e619d4, #760cccf5);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.contact-heart {
+  color: #e713b9;
+}
+
+.contact-form-wrap {
+  border-radius: 1rem;
+  max-width: 70%;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #303742fd;
+}
+label{
+  color: #f5dfea;
+  font-family: "Playfair Display" ;
+}
 
 @media screen and (max-width: 990px) {
 
