@@ -3,14 +3,16 @@
   padding: 0;
 }
 
-body{
+html{
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #282c34; 
 }
+
 
 code {
   color:azure;
@@ -39,14 +41,13 @@ code {
 /*About page*/
 
 .about {
-  height: 100%;
+  max-height: 100%;
   padding: 30px;
-  background-color: #282c34;
-  overflow: hidden;
+  background-color: #282c34; 
 }
 
 .about_content {
-  max-width: 1550px;
+  max-width: 100%;
   margin: 5px auto;
   padding: 0 30px 0;
 }
@@ -99,7 +100,7 @@ code {
 }
 
 .about_row {
-  margin: 25px;
+  margin: auto;
 }
 
 .about_row:after {
@@ -162,7 +163,7 @@ code {
   color: #4bd6e9;
 }
 .contact {
-  height: 100vh;
+  min-height: 100%;
   background: #282c34;
   padding: 15px;
 }
@@ -231,10 +232,9 @@ code {
 /*Projects-page*/
 
 .project {
-  height: 100vh;
+  min-height: 100%;
   padding: 5% auto;
   background: #282c34;
-  overflow: scroll;
 }
 .title,
 .project-h1 {
@@ -290,7 +290,7 @@ code {
   transform: rotateY(180deg);
 }
 
-.flip-card-back button{
+.flip-card-back a{
   margin: 1%;
 }
 
@@ -305,8 +305,7 @@ code {
 /*Blog-page*/
 
 .blog-page {
-  height: 100%;
-  padding: 0;
+  min-height: 100%;
   background:#282c34;
 }
 
@@ -361,8 +360,8 @@ code {
   }
 
   .my_img img {
-    max-width: 350px;
-    max-height: 350px;
+    max-width: 340px;
+    max-height: 340px;
     margin-bottom: 20px;
   }
 
@@ -480,7 +479,7 @@ code {
     font-size: 17px;
   }
 
-  .flip-card-back button {
+  .flip-card-back a {
     font-size: 17px;
     padding: 2px;
     margin: 1.5%;
@@ -598,7 +597,7 @@ code {
   .project-p {
     font-size: 16px;
   }
-  .flip-card-back button {
+  .flip-card-back a {
     margin: 1%;
   }
  /*Blog page*/
@@ -695,8 +694,8 @@ code {
 
   .flip-card-front,
   .flip-card-back {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
   }
 
   .project {
@@ -727,7 +726,7 @@ code {
     font-size: 15px;
   }
 
-  .flip-card-back button {
+  .flip-card-back a {
     margin: 0.5%;
   }
   /*Blog page*/

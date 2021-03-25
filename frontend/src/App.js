@@ -1,4 +1,4 @@
-import { BrowserRouter, Route} from "react-router-dom";
+import { BrowserRouter, Route, Switch} from "react-router-dom";
 import AdminRoute from "./components/AdminRoute";
 import Header from "./components/Header";
 import About from "./pages/About";
@@ -13,6 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
+      <Switch>
       <Route path="/" exact={true} component={Home} />
       <Route path="/about"  component={About} />
       <Route path="/contact"  component={Contact} />
@@ -20,6 +21,7 @@ function App() {
       <Route path="/projectlist"  component={Projects} />
       <Route path="/bloglist"  component={Blogs} />
       <AdminRoute exact path="/admin" component={Admin}/>
+      </Switch>
     </BrowserRouter>
   );
 }

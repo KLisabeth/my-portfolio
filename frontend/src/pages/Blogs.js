@@ -9,6 +9,7 @@ import gfm from 'remark-gfm';
 import { useDispatch, useSelector } from "react-redux";
 import { listBlogs } from "../store/actions/blogActions";
 import LoadingNotice from "../components/notice/LoadingNotice";
+import Footer from "../components/Footer";
 
 
 
@@ -59,7 +60,6 @@ const emojiSupport = text => text.value.replace(/:\w+:/gi, name => emoji.getUnic
 
   return (
     <div className="blog-page">
-      <div id="blog">
         <h1 className=" blog_title">My Blogs</h1>
         {loading === false ? (
           <div>
@@ -84,8 +84,8 @@ const emojiSupport = text => text.value.replace(/:\w+:/gi, name => emoji.getUnic
             <LoadingNotice />
           
         )}
+        <Footer/>
       </div>
-    </div>
   );
 }
 

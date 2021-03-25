@@ -4,6 +4,7 @@ import thunk from "redux-thunk";
 import adminSigninReducer from "./store/reducers/authReducers";
 import { blogListReducer } from "./store/reducers/blogReducers";
 import { profileEditReducer, profileListReducer } from "./store/reducers/profileReducers";
+import { projectListReducer } from "./store/reducers/projectReducers";
 
 const initialState = { adminSignin: {
   auth: localStorage.getItem('auth')
@@ -17,6 +18,9 @@ const reducer = combineReducers({
   profileEdit: profileEditReducer,
 
   blogList: blogListReducer,
+
+  projectList: projectListReducer,
+
 
 
  
