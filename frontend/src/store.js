@@ -2,6 +2,7 @@ import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import adminSigninReducer from "./store/reducers/authReducers";
+import { profileEditReducer, profileListReducer } from "./store/reducers/profileReducers";
 
 const initialState = { adminSignin: {
   auth: localStorage.getItem('auth')
@@ -10,6 +11,11 @@ const initialState = { adminSignin: {
 },};
 const reducer = combineReducers({
   adminSignin: adminSigninReducer,
+
+  profileList: profileListReducer,
+  profileEdit: profileEditReducer,
+
+
  
 });
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
