@@ -1,6 +1,8 @@
 import { BrowserRouter, Route} from "react-router-dom";
+import AdminRoute from "./components/AdminRoute";
 import Header from "./components/Header";
 import About from "./pages/About";
+import Admin from "./pages/Admin";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
@@ -17,6 +19,7 @@ function App() {
       <Route path="/signin"  component={Signin} />
       <Route path="/projectlist"  component={Projects} />
       <Route path="/bloglist"  component={Blogs} />
+      <AdminRoute exact path="/admin" component={Admin}/>
     </BrowserRouter>
   );
 }
