@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import emoji from 'emoji-dictionary'
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { coldarkCold } from "react-syntax-highlighter/dist/esm/styles/prism";
+//import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 import gfm from 'remark-gfm';
+
+import { useDispatch, useSelector } from "react-redux";
+import { listBlogs } from "../store/actions/blogActions";
+import LoadingNotice from "../components/notice/LoadingNotice";
+
 
 
 function Blogs() {
+  const dispatch = useDispatch();
+  const blogList = useSelector((state) => state.blogList);
+  const { loading, blogs, error } = blogList;
+
+  useEffect(() => {
+    dispatch(listBlogs());
+  }, [dispatch]);
+
+ 
  
   const markdown = `
   A paragraph with *emphasis* and **strong importance**.
@@ -46,110 +61,30 @@ const emojiSupport = text => text.value.replace(/:\w+:/gi, name => emoji.getUnic
     <div className="blog-page">
       <div id="blog">
         <h1 className=" blog_title">My Blogs</h1>
-                <div className="blog-container" >
+        {loading === false ? (
+          <div>
+            <h6 className="text-danger justify-content-center text-center">
+            {error && <div>{error}</div>}
+            </h6>
+
+            {blogs.slice(0).reverse().map((blog) => (
+                <div className="blog-container" key={blog._id}>
                   <div className="blog-wrap">
-                    <h1 className="blog_title">blog title</h1>
-                    <p>created mar 24</p>
+                    <h1 className="blog_title">{blog.title}</h1>
+                    <p>{blog.created}</p>
                     <ReactMarkdown plugins={[[gfm, {singleTilde: false}]]} children={markdown} renderers={{text: emojiSupport, code: CodeBlock }}  className="blog_article">
-                   # Hello, I'm Kateryna Lisabeth,
-
-Highly motivated, young web developer and passionate about programming and enjoy solving challenges, based in Belgium.
-
-## languages i know 🔣:
-
--  HTML5
--  CSS3
--  Sass
--  Bootstrap
--  JavaScript (including ES6+)
--  ReactJS
--  Node.js
--  Express
--  MongoDB
--  SQLite
--  Git
--  Postman
-
-##  About Me 👱‍♀️
-
--  🏡 &nbsp; I'm from Ukraine.
--  🎓 &nbsp; I graduated as a web developer at [Hack Your Future Belgium](https://github.com/HackYourFutureBelgium).
--  💼 &nbsp; Looking for job or internship opportunities.
-
-   
+                      {blog.article}
                     </ReactMarkdown>
                   </div>
                 </div>
+            ))}
           </div>
+        ) : (
           
-                <div className="blog-container" >
-                  <div className="blog-wrap">
-                    <h1 className="blog_title">blog title</h1>
-                    <p>created mar 23</p>
-                    <ReactMarkdown plugins={[[gfm, {singleTilde: false}]]} children={markdown} renderers={{text: emojiSupport, code: CodeBlock }}  className="blog_article">
-                    # Hello, I'm Kateryna Lisabeth,
-
-Highly motivated, young web developer and passionate about programming and enjoy solving challenges, based in Belgium.
-
-## languages i know 🔣:
-
--  HTML5
--  CSS3
--  Sass
--  Bootstrap
--  JavaScript (including ES6+)
--  ReactJS
--  Node.js
--  Express
--  MongoDB
--  SQLite
--  Git
--  Postman
-
-##  About Me 👱‍♀️
-
--  🏡 &nbsp; I'm from Ukraine.
--  🎓 &nbsp; I graduated as a web developer at [Hack Your Future Belgium](https://github.com/HackYourFutureBelgium).
--  💼 &nbsp; Looking for job or internship opportunities.
-
-                    </ReactMarkdown>
-                  </div>
-          </div>
-         
-                <div className="blog-container" >
-                  <div className="blog-wrap">
-                    <h1 className="blog_title">blog title</h1>
-                    <p>created mar 23</p>
-                    <ReactMarkdown plugins={[[gfm, {singleTilde: false}]]} children={markdown} renderers={{text: emojiSupport, code: CodeBlock }}  className="blog_article">
-                    # Hello, I'm Kateryna Lisabeth,
-
-Highly motivated, young web developer and passionate about programming and enjoy solving challenges, based in Belgium.
-
-## languages i know 🔣:
-
--  HTML5
--  CSS3
--  Sass
--  Bootstrap
--  JavaScript (including ES6+)
--  ReactJS
--  Node.js
--  Express
--  MongoDB
--  SQLite
--  Git
--  Postman
-
-##  About Me 👱‍♀️
-
--  🏡 &nbsp; I'm from Ukraine.
--  🎓 &nbsp; I graduated as a web developer at [Hack Your Future Belgium](https://github.com/HackYourFutureBelgium).
--  💼 &nbsp; Looking for job or internship opportunities.
-
-                    </ReactMarkdown>
-                  </div>
-                
-          </div>
+            <LoadingNotice />
+          
+        )}
+      </div>
     </div>
   );
 }

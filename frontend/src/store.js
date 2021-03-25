@@ -2,6 +2,7 @@ import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import adminSigninReducer from "./store/reducers/authReducers";
+import { blogListReducer } from "./store/reducers/blogReducers";
 import { profileEditReducer, profileListReducer } from "./store/reducers/profileReducers";
 
 const initialState = { adminSignin: {
@@ -14,6 +15,8 @@ const reducer = combineReducers({
 
   profileList: profileListReducer,
   profileEdit: profileEditReducer,
+
+  blogList: blogListReducer,
 
 
  
