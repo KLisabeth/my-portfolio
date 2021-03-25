@@ -1,16 +1,31 @@
-import React, { useState} from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import { RiHeart3Fill } from "react-icons/ri";
 import Icons from "../components/icons/Icons";
+import LoadingNotice from "../components/notice/LoadingNotice";
+import { useDispatch, useSelector } from "react-redux";
+import { messageMe } from "../store/actions/messageActions";
 
-
-function Contact() {
-  // eslint-disable-next-line
+function Contact(props) {
   const [email, setEmail] = useState();
-  // eslint-disable-next-line
   const [comment, setComment] = useState();
 
- 
+  const messageSend = useSelector((state) => state.messageSend);
+  const { loading, success, error } = messageSend;
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    if(success)
+    props.history.push("/")
+     return () => {
+      //
+     }
+   }, [props.history, success])
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(messageMe(email, comment));
+  };
 
   return (
     <div className="contact">
@@ -23,8 +38,11 @@ function Contact() {
           </h3>
 
           <div className="contact-form-wrap">
-            
-            <Form bg="dark" autoComplete="off" className="contact-form">
+            {loading && <LoadingNotice />}
+            <h6 className="text-danger justify-content-center text-center">
+              {error && <>{error}</>}
+            </h6>
+            <Form bg="dark" autoComplete="off" className="contact-form" onSubmit={submitHandler}>
               <Form.Group>
                 <Form.Label id="label0" htmlFor="user-email">
                   Email

@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 
 import adminSigninReducer from "./store/reducers/authReducers";
 import { blogListReducer } from "./store/reducers/blogReducers";
+import messageReducer from "./store/reducers/messageReducers";
 import { profileEditReducer, profileListReducer } from "./store/reducers/profileReducers";
 import { projectListReducer } from "./store/reducers/projectReducers";
 
@@ -13,6 +14,8 @@ const initialState = { adminSignin: {
 },};
 const reducer = combineReducers({
   adminSignin: adminSigninReducer,
+
+  messageSend: messageReducer,
 
   profileList: profileListReducer,
   profileEdit: profileEditReducer,
