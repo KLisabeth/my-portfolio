@@ -1,1 +1,1 @@
-web: node --experimental-modules index.js
+web: --require dotenv/config --exec babel-register --exec babel-node index.js
