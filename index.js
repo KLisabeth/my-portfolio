@@ -7,6 +7,7 @@ import profileRoute from "./backend/api/routes/profileRoute.js";
 import projectRoute from "./backend/api/routes/projectRoute.js";
 import path from 'path';
 import uploadRoute from "./backend/api/routes/uploadRoute.js";
+import 'dotenv/config.js';
 
 //Mongo Db
 const db = process.env.MDB_URL;
