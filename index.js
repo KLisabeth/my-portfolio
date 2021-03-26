@@ -5,7 +5,10 @@ import blogRoute from "./backend/api/routes/blogRoute";
 import messageRoute from "./backend/api/routes/messageRoute";
 import profileRoute from "./backend/api/routes/profileRoute";
 import projectRoute from "./backend/api/routes/projectRoute";
+import path from 'path';
+
 import key from "./backend/config/key";
+import uploadRoute from "./backend/api/routes/uploadRoute";
 
 //Mongo Db
 const db = key.MDB_URL;
@@ -22,11 +25,22 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
+});
+
+
 app.use("/api/admin", adminRoute);
 app.use("/api/profile", profileRoute);
 app.use("/api/projects", projectRoute);
 app.use("/api/blogs", blogRoute);
-app.use("/api/message", messageRoute)
+app.use("/api/message", messageRoute);
+app.use("/api/uploads", uploadRoute);
+
+
+
+const __dirname = path.resolve();
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 const port = key.PORT;
 
