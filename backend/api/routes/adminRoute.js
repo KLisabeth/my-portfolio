@@ -1,7 +1,7 @@
 import express from "express";
-import Admin from "../../models/adminModel";
+import Admin from "../../models/adminModel.js";
 import bcrypt from "bcryptjs";
-import { getToken } from "../../config/utils";
+import { getToken } from "../../config/utils.js";
 
 const adminRoute = express.Router();
 
