@@ -91,7 +91,8 @@
 
  .footer {
   background-color: #282c34;
-  max-height: 70px;
+  max-height: 150px;
+  min-height: 70px;
   position: relative;
   width: 100%;
 
@@ -99,7 +100,7 @@
 
 .copyright {
   background-color: #282c34;
-  position: relative;
+  position: absolute;
   bottom: 0;
   margin: 0 auto;
   width: 100%;

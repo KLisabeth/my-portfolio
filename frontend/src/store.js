@@ -2,7 +2,7 @@ import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import adminSigninReducer from "./store/reducers/authReducers";
-import { blogListReducer } from "./store/reducers/blogReducers";
+import { blogDeleteReducer, blogListReducer, blogSaveReducer } from "./store/reducers/blogReducers";
 import messageReducer from "./store/reducers/messageReducers";
 import { profileEditReducer, profileListReducer } from "./store/reducers/profileReducers";
 import { projectListReducer } from "./store/reducers/projectReducers";
@@ -21,6 +21,9 @@ const reducer = combineReducers({
   profileEdit: profileEditReducer,
 
   blogList: blogListReducer,
+  blogSave: blogSaveReducer,
+  blogDelete: blogDeleteReducer,
+
 
   projectList: projectListReducer,
 

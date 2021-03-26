@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { Row, Container, Col, Form, Table, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import LoadingNotice from "../components/notice/LoadingNotice";
-import {listProfile, editProfile} from "../store/actions/profileActions";
-import { PROFILE_EDIT_RESET } from "../store/constants/profileConstants";
+import LoadingNotice from "../../components/notice/LoadingNotice";
+import {listProfile, editProfile} from "../../store/actions/profileActions";
+import { PROFILE_EDIT_RESET } from "../../store/constants/profileConstants";
+import { Link } from "react-router-dom";
 import Axios from "axios"
 
 
@@ -85,7 +86,9 @@ function Admin(props) {
     }
   };
     return (
-        <div className="dashboard_page">
+        <div className="admin_page">
+      <Link className="m-4 link_title"  to='/blogs'>Create or edit blogs</Link>
+       <Link className="m-4 link_title"  to='/projects'>Create or edit projects</Link>
         <h2 className="title">My Profile</h2>
         <Container>
         <Row>
@@ -100,30 +103,26 @@ function Admin(props) {
                     <div>
                 </div>
                 <div>
-              <label htmlFor="image">Image</label>
               <input
-                id="image"
                 type="text"
-                placeholder="Enter image"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
-              ></input>
+              />
             </div>
             <div>
               <input
                 type="file"
-                id="imageFile"
                 name="image"
                 label="Choose Image"
                 onChange={uploadFileHandler}
-              ></input>
+              />
               {loadingUpload && <LoadingNotice /> }
               <h6 className="text-danger justify-content-center text-center">
                       {errorUpload && <div>{errorUpload}</div>}
                     </h6>
               </div>
                 <div className="form-group">
-                      <label htmlFor="cv">Cv</label>
+                      <label htmlFor="cv">Cv link</label>
                       <input
                         type="text"
                         className="form-control"

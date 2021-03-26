@@ -182,10 +182,6 @@ code {
   -webkit-background-clip: text;
 }
 
-.contact-heart {
-  color: #e713b9;
-}
-
 .contact-form-wrap {
   border-radius: 1rem;
   max-width: 70%;
@@ -336,6 +332,28 @@ code {
 .blog_article {
   padding: 25px;
 }
+/*Admin-page*/
+.link_title{
+  color: #04bbf3;
+  font-family: "Playfair Display";
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.edit_page, 
+.admin_page {
+  height: 100%;
+  padding: 5% auto;
+  background-color: #282c34;
+  
+}
+.table ,th  ,td, label{
+  color: #c5c0c0;
+}
+.about-me{
+  color: #2d74f8;
+}
+
 
 
 @media screen and (max-width: 990px) {

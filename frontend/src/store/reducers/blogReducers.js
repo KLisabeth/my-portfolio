@@ -5,9 +5,11 @@ import {
   BLOG_SAVE_REQUEST,
   BLOG_SAVE_SUCCESS,
   BLOG_SAVE_FAIL,
+  BLOG_SAVE_RESET,
   BLOG_DELETE_REQUEST,
   BLOG_DELETE_SUCCESS,
   BLOG_DELETE_FAIL,
+  BLOG_DELETE_RESET,
 } from "../constants/blogConstants";
 
 function blogListReducer(state = { blogs: [] }, action) {
@@ -32,7 +34,8 @@ function blogDeleteReducer(state = { blog: {} }, action) {
       return { loading: false, blog: action.payload, success: true };
     case BLOG_DELETE_FAIL:
       return { loading: false, error: action.payload };
-
+   case BLOG_DELETE_RESET:
+   return {}
     default:
       return state;
   }
@@ -45,6 +48,8 @@ function blogSaveReducer(state = { blog: {} }, action) {
       return { loading: false, success: true, blog: action.payload };
     case BLOG_SAVE_FAIL:
       return { loading: false, error: action.payload };
+    case BLOG_SAVE_RESET:
+        return {}
     default:
       return state;
   }
