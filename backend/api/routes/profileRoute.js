@@ -1,5 +1,5 @@
 import express from "express";
-import Profile from "../../models/profileModel";
+import Profile from "../../models/profileModel.js";
 
 
 const profileRoute = express.Router();

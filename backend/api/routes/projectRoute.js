@@ -1,5 +1,5 @@
 import express from "express";
-import Project from "../../models/projectModel";
+import Project from "../../models/projectModel.js";
 
 
 const projectRoute = express.Router();

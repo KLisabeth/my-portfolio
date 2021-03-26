@@ -1,17 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
-import adminRoute from "./backend/api/routes/adminRoute";
-import blogRoute from "./backend/api/routes/blogRoute";
-import messageRoute from "./backend/api/routes/messageRoute";
-import profileRoute from "./backend/api/routes/profileRoute";
-import projectRoute from "./backend/api/routes/projectRoute";
+import adminRoute from "./backend/api/routes/adminRoute.js";
+import blogRoute from "./backend/api/routes/blogRoute.js";
+import messageRoute from "./backend/api/routes/messageRoute.js";
+import profileRoute from "./backend/api/routes/profileRoute.js";
+import projectRoute from "./backend/api/routes/projectRoute.js";
 import path from 'path';
-
-import key from "./backend/config/key";
-import uploadRoute from "./backend/api/routes/uploadRoute";
+import uploadRoute from "./backend/api/routes/uploadRoute.js";
 
 //Mongo Db
-const db = key.MDB_URL;
+const db = process.env.MDB_URL;
 mongoose
   .connect(db, {
     useCreateIndex: true,
@@ -42,6 +40,7 @@ app.use("/api/uploads", uploadRoute);
 const __dirname = path.resolve();
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
+
 app.use(express.static(path.join(__dirname, 'build')));
 
 
@@ -50,6 +49,6 @@ app.get('/*', (req, res) => {
 });
 
 
-const port = key.PORT;
+const port = process.env.PORT;
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

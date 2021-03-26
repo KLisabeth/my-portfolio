@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import key from "./key";
+
 
 const getToken = (admin) => {
   return jwt.sign(
@@ -7,7 +7,7 @@ const getToken = (admin) => {
       _id: admin._id,
       isAdmin: admin.isAdmin,
     },
-    key.JWT_SECRET,
+    process.env.JWT_SECRET,
     {
       expiresIn: "12h",
     }
@@ -17,7 +17,7 @@ const isAuth = (req, res, next) => {
   const token = req.headers.authorization;
   if (token) {
     const onlyToken = token.slice(7, token.length);
-    jwt.verify(onlyToken, key.JWT_SECRET, (err, decode) => {
+    jwt.verify(onlyToken, process.env.JWT_SECRET, (err, decode) => {
       if (err) {
         return res.status(401).send({ msg: "Invalid Token" });
       }
@@ -37,4 +37,4 @@ const isAdmin = (req, res, next) => {
   return res.status(401).send({ msg: "Admin token is not valid." });
 };
 
-module.exports = { getToken, isAuth, isAdmin };
+export { getToken, isAuth, isAdmin };

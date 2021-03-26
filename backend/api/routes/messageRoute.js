@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
-import key from '../../config/key';
-const apiKey = key.API_KEY;
-const URL = key.URL;
+
+const apiKey = process.env.API_KEY;
+const URL = process.env.URL;
 
 const messageRoute = (req, res) => {
   const { email, coment } = req.body;
