@@ -1,37 +1,36 @@
-.icons button{
+.icons {
   border: none;
   background: none;
   margin: 10px;
+  font-size: 2rem;
+  display: inline-block;
 }
-.icons {
-   font-size: 2rem;
-   display: inline-block;
- }
+
   .icon{
     margin: 1%;
   }
   
-  .icons button:hover {
+  .icons a:hover {
     transform: scale(1.5);
   }
   
   .github {
-    font-size: 2rem;
+    font-size: 2rrem;
     color: black;
   }
   .twitter {
-    font-size: 2rem;
-    color: #0665d3;
+    font-size: 2rrem;
+    color: #0765d1;
   }
   .linkedin {
-    font-size: 2rem;
+    font-size: 2rrem;
     color: #f4f5f7;
     background-color: #2b4f92;
     border-radius: 5px;
   }
   
   .instagram {
-    font-size: 2rem;
+    font-size: 2rrem;
     border-radius: 5px;
     color: linen;
     background-image: linear-gradient(to top right, #e2b00a, #eb1ab6, #0508c9);
@@ -40,31 +39,31 @@
 
   @media screen and (max-width: 890px ) {
 
-  .icons button {
+  .icons {
     margin-top: 10px;
     padding: 10px;
-    font-size: 1em;
+    font-size: 1rrem;
     display: contents;
   }
-  .icons button:hover {
+  .icons a:hover {
     transform: scale(1.2);
   }
   .twitter,
   .linkedin,
   .instagram,
   .github {
-    font-size: 1.8em;
+    font-size: 1.8rrem;
     margin: 10px;
   }
 }
 @media only screen and (max-width: 680px) {
-    .icons button {
+    .icons a {
         margin: 10px;
         padding: 10px;
         font-size: 0.7rem;
         display: contents;
       }
-      .icons button:hover {
+      .icons a:hover {
         transform: scale(1.5);
       }
       .twitter,
@@ -76,13 +75,13 @@
       }
 }
 @media screen and (max-width: 390px) {
-    .icons button {
+    .icons a {
         margin: 0 10px 10px 10px;
         padding: 0 10px;
         font-size: 0.5rem;
         display: contents;
       }
-      .icons button:hover {
+      .icons a:hover {
         transform: scale(1.5);
       }
    
@@ -91,6 +90,6 @@
       .instagram,
       .github {
         font-size: 1.4rem;
-        margin: 7px;
+        margin: 10px;
       }
 }

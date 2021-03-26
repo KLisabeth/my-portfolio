@@ -168,10 +168,10 @@ code {
   padding: 15px;
 }
 
-.contact-form textarea,
+/* .contact-form textarea,
 .contact-form input {
   background-color: #bdb9b921;
-}
+} */
 
 .contact-script {
   text-align: center;
@@ -185,7 +185,7 @@ code {
 .contact-form-wrap {
   border-radius: 1rem;
   max-width: 70%;
-  margin: 2rem auto;
+  margin: -15% auto;
   padding: 1rem;
   background: #303742fd;
 }
@@ -411,6 +411,10 @@ code {
     padding: 0 auto;
     margin: 0 auto;
   }
+  .contact-form-wrap {
+    margin: -25% auto;
+   
+  }
 }
 
 
@@ -502,6 +506,15 @@ code {
     padding: 2px;
     margin: 1.5%;
   }
+  /*Contact*/
+  .contact-form-wrap {
+    margin: 2% auto;
+  }
+  .contact_title,
+  .contact-script{
+   margin: 5px auto;
+   font-size: 30px;
+ }
 }
 @media screen and (max-width: 360px) {
 
@@ -642,6 +655,14 @@ code {
 .blog_article h1{
   font-size: 20px;
   }
+  .contact-form-wrap {
+    margin: 1% auto;
+  }
+  .contact_title,
+  .contact-script{
+   margin: 5px auto;
+   font-size: 25px;
+ }
 }
 
 @media screen and (max-width: 280px) {

@@ -48,7 +48,7 @@ function CreateEditProjects(props) {
     return () => {
       //
     };
-  }, [dispatch, auth, successDelete, successSave]);
+  }, [dispatch, props.history, auth, successDelete, successSave]);
 
   const saveHandler = (e) => {
     e.preventDefault();

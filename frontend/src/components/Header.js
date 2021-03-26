@@ -33,8 +33,8 @@ function Header() {
             <Link to="/">{auth.name}</Link>
           </div>
           <ul className={isActive ? "menu-list hide" : "menu-list active"}>
-            <div className="icon cancel-btn" onClick={handleActive}>
-              <VscChromeClose className="rime" />
+            <div className="icon cancel-btn">
+              <VscChromeClose className="rime" onClick={handleActive} />
             </div>
             <li>
               <Link to="/">Home</Link>
