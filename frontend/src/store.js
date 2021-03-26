@@ -5,7 +5,7 @@ import adminSigninReducer from "./store/reducers/authReducers";
 import { blogDeleteReducer, blogListReducer, blogSaveReducer } from "./store/reducers/blogReducers";
 import messageReducer from "./store/reducers/messageReducers";
 import { profileEditReducer, profileListReducer } from "./store/reducers/profileReducers";
-import { projectListReducer } from "./store/reducers/projectReducers";
+import { projectDeleteReducer, projectListReducer, projectSaveReducer } from "./store/reducers/projectReducers";
 
 const initialState = { adminSignin: {
   auth: localStorage.getItem('auth')
@@ -26,7 +26,9 @@ const reducer = combineReducers({
 
 
   projectList: projectListReducer,
-
+  projectSave: projectSaveReducer,
+  projectDelete: projectDeleteReducer,
+ 
 
 
  

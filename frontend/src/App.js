@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import About from "./pages/About";
 import Admin from "./pages/admin/Admin";
 import CreateEditBlogs from "./pages/admin/CreateEditBlogs";
+import CreateEditProjects from "./pages/admin/CreateEditProjects"
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
@@ -23,6 +24,7 @@ function App() {
       <Route path="/bloglist"  component={Blogs} />
       <AdminRoute exact path="/admin" component={Admin}/>
       <AdminRoute exact path="/blogs" component={CreateEditBlogs} />
+      <AdminRoute exact path="/projects" component={CreateEditProjects} />
       </Switch>
     </BrowserRouter>
   );
